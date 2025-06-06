@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Book JSON Display</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+  <h1>Check Console for Output</h1>
+
+  <script>
+    $(document).ready(function() {
+      $.getJSON("books.json", function(data) {
+       
+        console.log("Title of first book:", data[0].title);
+
+        console.log("Author of second book:", data[1].author);
+
+        let allGenres = data.map(book => book.genres).flat();
+        console.log("All genres:", allGenres);
+      });
+    });
+  </script>
+</body>
+</html>
